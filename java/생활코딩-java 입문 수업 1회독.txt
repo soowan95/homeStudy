@@ -1,0 +1,74 @@
+강의를 1회독 하고 내가 기억하는 것만 남겨보고 2회독은 필기하면서 듣고 둘을 비교해볼 예정
+
+java에는 숫자를 담을 수 있는 데이터형과 문자를 담을 수 있는 데이터형이 있는데
+숫자를 담을 수 있는 데이터형에는 정수를 담을 수 있는 byte, short, int, long이 있고 순서대로 1,2,4,8byte의 크기를 가지고 있음.
+                               실수를 담을 수 있는 float, double이 있음.
+long을 쓰기 위해선 숫자 끝애 L을 붙어야 하고 float을 쓰기 위해선 F를 붙어야 함. 정수의 기본형은 int, 실수의 기본형은 double임.
+문자를 담을 수 있는 데이터형에는 char, String이 있고 char은 문자밖에 못담지만 String은 문자열을 담을 수 있음.
+데이터형이 작은 것에서 큰 것으로 가는 것은 문제가 안됨 
+ex1) class Practice {
+    double i; 
+    public double intToDouble(int i) {
+        this.i = i;
+        return this.i;
+    }
+}
+ex2)class Practice {
+    int i; 
+    public double intToDouble(int i) {
+        this.i = i;
+        return this.i;
+    }
+}
+
+하지만 큰 것에서 작은 것으로 가는 것은 컴파일 오류가 발생
+ex1)class Practice {
+    double i; 
+    public int intToDouble(int i) {
+        this.i = i;
+        return this.i; <- 출력 값이 int여야 하지만 this.i 는 double이므로 컴파일 오류
+    }
+}
+ex2)class Practice {
+    int i; 
+    public int intToDouble(double i) {
+        this.i = i; <- this.i는 int지만 i는 double이므로 컴파일 오류
+        return this.i;
+    }
+}
+ex3)class Practice {
+    int i; 
+    public int intToDouble(double i) {
+        this.i = (int)i; <-이때 (int)를 통해 강제 형 변환을 하여 오류 수정 가능
+        return this.i;
+    }
+}
+
+반복문에는 while과 for문이 있고, while문은 while(){}에서 ()안에 들어있는 인자가 참이면 {}를 계속 실행한 다는 장점이 있지만 직접 초기화 해야하기 때문에 for문이 탄생
+for문은 for(초기설정; 조건이 참이면; 반복)이라는 형식임
+
+java는 객체지향프로그렘(oot)이기 때문에 class라는 객체를 생성하고 그 class를 통해 각각의 인스턴스를 생성할 수 있음.
+class에 int i; 를 지정한다음 각각 다른 인스턴스를 생성하면 그 안의 i는 다른 i임.
+클래스를 통해 인스턴스가 생성되기 때문에 인스턴스는 클래스 맴버에 접근할 수 있지만 클래스는 인스턴스 맴버에 접근할 수 없음.
+한 클래스를 생성한 뒤 그 클래스의 구조는 바꾸지 않고 다른 메소드를 추가해서 사용하고 싶을때 하는 것이 상속이고 extends를 사용.
+상속 받은 자녀클래스는 부모클래스의 모든 형질을 받고 있으며 부모클래스의 메소드를 변경할 수 있는데 이것이 overriding임.
+overloading은 같은 이름의 메소드에 다양한 파라미터를 추가하는 것.
+
+접근제어자에는 public, private, protected, deafalt가 있음.
+순서대로 더 개방적이라는 건데 정확한 구조는 까먹음..
+
+abstract문법과 interface는 매우 흡사하지만 abstract는 그안에 구체적인 것까지 제한할 수 있는 것이 비해 interface는 정말 틀만 제공함.
+
+클래스 중에 Object는 모든 클래스의 부모클래스이기 때문에 모든 데이터형을 Object 데이터형으로 인스턴스 가능.
+그러므로 Object를 쓸때는 무분별한 사용을 막기 위해 어느정도 제한이 필요
+
+enum은 까먹음..
+
+generic은 어떤 메소드의 출력값이 특정되는 것 보다 사용자로 하여금 특정하도록 하는 것이 유리할 때 사용.
+
+Collections에는 set, list, map이 있는데
+set은 순서와 상관없이 그 정보만 담는 그릇임 ex) 1,2,4,2,2,4를 담아도 그릇에는 1,2,4만 들어감
+list는 순서에 따라 그 정보를 담는 그릇임 ex) 1,2,4,2,2,4를 담으면 순서 그대로 들어감
+map은 정의역이 치역에 대응하도록 하는 함수임. 정의역에 있는 하나의 인자가 공역에 있는 여러개의 치역에 대응할 수 없는 것과 같음
+
+generic과 Collections은 2회독 때 더 유의깊게 공부해 볼 예정

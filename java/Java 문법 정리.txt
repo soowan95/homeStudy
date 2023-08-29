@@ -1,0 +1,14 @@
+1. println : 문자열뿐만 아니라 변수, 숫자, 수식 등이 표현 가능.
+2. printf : 문자열 포맷, C언어 문법. ex) System.out.printf("저는 %s입니다. 나이는 %d살이고, 키는 %fcm입니다. "김수완", "29", "175.0");
+            String.format을 이용해 한 문자열에 저장할 수 있음. ex)String str = String.format("저는 %s입니다. 나이는 %d살이고, 키는 %fcm입니다. "김수완", "29", "175.0");
+3. Math : 여러가지 수학적 기능을 담아놓은 메소드 .max .min .abs 등등 여러가지가 있음.
+4. Integer.parseInt() : 문자열을 숫자로 바꿔주는 메소드. ex) String str = "100"; \n int i = Integer.parseInt(str); 이렇게 하면 i는 100이라는 숫자를 담음. (int자리에 다른 숫자 데이터타입도 가능.)
+5. String.valueof() : 숫자를 문자열로 바꿔주는 메소드.
+6. Random : 임의로 숫자를 생성하고 싶을 때 사용하는 클래스. ex) Random r = new Random(); \n int i = random.nextInt(bound: 10); i는 0에서9까지의 숫자 중 하나가 출렴됨.
+7. Scanner : 문자열을 입력 받을 수 있는 클래스. ex) Scanner sc = new Scanner(System.in); \n System.out.println(sc.next()); 입력한 값이 출력됨.
+             int나 다른 데이터타입을 입력하고 싶으면 .nextInt나 .nextLong같이 데이터타입을 지정할 수 있음.
+8. ? : if문을 간소화 할 수 있는 문법. 구조 : 데이터타입 var = 조건 ? 조건이 참일 때 출력값 : 조건이 거짓일 때 출력값;
+9. null : 문자열에서 값이 없다는 의미.
+10. ... : 크기의 제한 없이 여러개의 변수를 배열로 저장하는 문법. ex) public int num(int ... numbers){} numbers라는 숫자 배열이 생성됨.
+11. instanceof : 인스턴스의 데이터타입을 확인할 때 사용. 다형성에서 A라는 클래스를 B가 상속 받고 있을 때 ex) A i = new B(); \n boolean i instanceof B -> 참이 됨.
+12. Thread : java는 작성한 순서대로 출력하게 하는데 Thread를 통해 그 순서를 변경 할 수 있음. ex) PracticeThread.java 참고
