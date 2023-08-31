@@ -24,3 +24,10 @@ Welcome Page : src.main.resources.static 디렉토리에 index.html을 만들면
 템플릿 엔진 : 지정된 템플릿 양식과 데이터가 합쳐져서 HTML 문서를 출력하는 SW.
   사용이유 1. 코드의 간결화 2. 높은 재사용성 3. 유지보수 용이
 cmd에서 spring서버 실행하기 : 해당디렉토리로 이동 후 gradlew build 입력. cd build/libs 를 통해 build안에 있는 libs로 이동. dir을 통해 .jar파일 java -jar로 실행.
+
+2023.08.31 Thu
+@ResponseBody 사용 원리 : viewResolver 대신에 HttpMessageConverter가 동작함. 기본 문자 처리는 StringGttpMessageConverter. 기본 객체 처리는 MappingJackson2HttpMessageConverter. 등 여러 Converter가 있음.
+개발한 기능을 테스트 할 때 보통 main 메서드를 통해 실행하거나, 웹 애플리케이션의 컨트롤러를 통해 실행하지만 자바는 JUnit이라는 프레임워크로 쉽게 테스트를 실행함.
+@Test를 통해서 쉽게 테스트 할 수 있음. 클래스 단계에서의 실행으로 여러 메서드를 한번에 테스트 할 수 있지만 순서가 정해져 있지 않기 때문에 테스트는 서로 독립적으로 설계되야 함.
+그러기 위해서 @AfterEach를 통해 각 테스트 종료시 실행할 메서드를 생성해 정보를 초기화 해줘야 함.
+TTD : 테스트 주도 개발.
