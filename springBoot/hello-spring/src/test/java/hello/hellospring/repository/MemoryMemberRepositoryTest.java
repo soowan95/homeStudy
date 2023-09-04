@@ -1,7 +1,6 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,11 +10,11 @@ import static org.assertj.core.api.Assertions.*;
 
 public class MemoryMemberRepositoryTest {
 
-  MemoryMemberRepositrory repositrory = new MemoryMemberRepositrory();
+  MemoryMemberRepository repository = new MemoryMemberRepository();
 
   @AfterEach
   public void afterEach() {
-    repositrory.clearStore();
+    repository.clearStore();
   }
 
   @Test
@@ -23,9 +22,9 @@ public class MemoryMemberRepositoryTest {
     Member member = new Member();
     member.setName("Spring");
 
-    repositrory.save(member);
+    repository.save(member);
 
-    Member result = repositrory.findById(member.getId()).get();
+    Member result = repository.findById(member.getId()).get();
     assertThat(member).isEqualTo(result);
   }
 
@@ -33,13 +32,13 @@ public class MemoryMemberRepositoryTest {
   public void findByName() {
     Member member1 = new Member();
     member1.setName("spring1");
-    repositrory.save(member1);
+    repository.save(member1);
 
     Member member2 = new Member();
     member2.setName("spring2");
-    repositrory.save(member2);
+    repository.save(member2);
 
-    Member result = repositrory.findByName("spring1").get();
+    Member result = repository.findByName("spring1").get();
 
     assertThat(result).isEqualTo(member1);
   }
@@ -48,13 +47,13 @@ public class MemoryMemberRepositoryTest {
   public void findAll() {
     Member member1 = new Member();
     member1.setName("spring1");
-    repositrory.save(member1);
+    repository.save(member1);
 
     Member member2 = new Member();
     member2.setName("spring2");
-    repositrory.save(member2);
+    repository.save(member2);
 
-    List<Member> result = repositrory.findAll();
+    List<Member> result = repository.findAll();
 
     assertThat(result.size()).isEqualTo(2);
   }
