@@ -41,3 +41,13 @@ ctrl + shift + / : 전체 주석.
 레포지토리의 메소드들의 이름은 직관적으로 알기 쉽게 하지만 서비스에 있는 메소드들은 그 기능을 알기 쉽게 비지니스 적인 용어를 사용하는 것이 보통임.
 test의 메소드 명은 한글로 작성해도 무관함.
 test 할 때 모든 경우는 아니지만 처음 연습할 때는 given, when, then의 구조로 연습하는 것이 좋음.
+
+2023.09.05 Tue
+MVC : Model(DB 담당), View(UI 담당), Controller(입력 담당)
+@Controller : 사용자의 요청이 진입하는 지점으로 어떤 처리를 할지 결정함. Layered Architecture에서 처리한 View를 사용자에게 응답으로 보내줌.
+@Autowired : 스프링 컨테이너에 등록한 빈에게 의존관계주입이 필요할 때 DI를 도와줌.
+@Service : Controller에서 넘어온 값들에 대해 해당하는 Model을 호출
+스프링 빈을 등록하는 2가지 방법
+  1. 컴포넌트 스캔(@Controller, @Service, @Repository 등)과 자동 의존관계 설정
+  2. 자바 코드로 직접 스프링 빈 등록(@Configuration, @Bean 사용)
+DI 설정 방법에는 생정자 주입, 필드 주입, setter 주입이 있는데 필드 주입은 한번 설정 후 변경이 안돼서 거의 안쓰이고 setter는 public해야 해서 임의로 변경될 가능성이 있어 생성자 주입을 사용하는 것이 가장 좋음.

@@ -49,6 +49,15 @@ Java SE 10
 Java SE 11
 새로운 String 매서드 추가
 
+Java SE 12
+switch문 확장
+
+Java SE 13
+multi line string 개선 """
+
+Java SE 14
+switch 표준화(yeild는 return이라고 생각하면 됨.
+
 Java SE 16
 버전 관리가 Git으로 변경
 
