@@ -2,8 +2,11 @@
 *.iml
 *.class
 *.xml
+/H2/
 # Ignore Gradle project-specific cache directory
 .gradle
 
 # Ignore Gradle build output directory
 build
+
+*.pdf
