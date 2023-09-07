@@ -45,7 +45,7 @@ test 할 때 모든 경우는 아니지만 처음 연습할 때는 given, when, 
 2023.09.05 Tue
 MVC : Model(DB 담당), View(UI 담당), Controller(입력 담당)
 @Controller : 사용자의 요청이 진입하는 지점으로 어떤 처리를 할지 결정함. Layered Architecture에서 처리한 View를 사용자에게 응답으로 보내줌.
-@Autowired : 스프링 컨테이너에 등록한 빈에게 의존관계주입이 필요할 때 DI를 도와줌.
+@Autowired : 스프링 컨테이너에 등록한 빈에게 의존관계주입이 필요할 때 DI를 도와줌. 생정자가 하나면 생략 가능.
 @Service : Controller에서 넘어온 값들에 대해 해당하는 Model을 호출
 스프링 빈을 등록하는 2가지 방법
   1. 컴포넌트 스캔(@Controller, @Service, @Repository 등)과 자동 의존관계 설정
@@ -54,3 +54,8 @@ DI 설정 방법에는 생정자 주입, 필드 주입, setter 주입이 있는�
 
 2023.09.06 Wed
 H2DB 실행하기 : window는 H2/bin에 있는 h2.bat을 실행. 연결 후 바탕화면에 test.mv.db확인하고 JDBC URL을 jdbc:h2:tcp://localhost/~/test로 변경.
+
+2023.09.07 Thu
+@SpringBootTest : 스프링 컨테이너와 테스트를 함께 실햄
+@Transactional을 통해 테스트를 진행하면 테스트 실행 전 트랜잭션을 시작하고, 완료 후 데이터베이스를 자동으로 롤백해줌
+통합테스트(springboot) 보다는 단위테스트를 지향해야 함.
