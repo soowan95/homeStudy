@@ -66,3 +66,5 @@ AOP(Aspect Oriented Programming) : 관점 지향 프로그래밍, 각각의 관�
 @Component 를 통해 스프링 빈으로 등록.
 @Aspect 을 통해 해당 class가 Aspect를 나타내는 class라는 것을 명시.
 @Around() 을 통해 적용할 범위 설정 가능.
+MyBatis : DB를 쉽게 다룰 수 있게 도와주는 ORM(Object Relational Mapping) 프레임워크. DB쿼리와 프로그래밍 언어 코드를 분리하여 유지보수성과 생산성을 높임.
+XML : HTML과 마찬가지로 Markup Language이지만 HTML은 약속된 태그만을 사용하고 XML은 태그를 사용자 임의로 생성할 수 있음. 정확히 말하면 Markup Language를 설명하기 위한 Language임.
