@@ -62,3 +62,7 @@ H2DB 실행하기 : window는 H2/bin에 있는 h2.bat을 실행. 연결 후 바�
 
 2023.09.14 Thu
 AOP(Aspect Oriented Programming) : 관점 지향 프로그래밍, 각각의 관심사에 따라 모듈화 하는 것.
+  적용 후 의존관계 : 스프링 컨테이너는 프록시(가짜 객체)를 생성하고 joinPoint.proceed() 후에 실제 객체를 호출함.
+@Component 를 통해 스프링 빈으로 등록.
+@Aspect 을 통해 해당 class가 Aspect를 나타내는 class라는 것을 명시.
+@Around() 을 통해 적용할 범위 설정 가능.
